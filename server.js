@@ -9,4 +9,8 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, './index.html'))
+})
+
 app.listen(process.env.PORT || 3000)
