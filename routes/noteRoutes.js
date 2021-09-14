@@ -28,3 +28,5 @@ router.delete('/notes/:id', (req, res) => {
   notes = notes.filter(note => note.id !== id)
   res.sendStatus(200)
 })
+
+module.exports = router 
