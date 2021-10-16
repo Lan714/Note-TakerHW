@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(require('./routes'))
 
 app.get('/notes', (req, res) => {
-  res.sendFile(join(__dirname, 'public/index.html'))
+  res.sendFile(join(__dirname, './public/index.html'))
 })
 
 app.listen(process.env.PORT || 3000)
