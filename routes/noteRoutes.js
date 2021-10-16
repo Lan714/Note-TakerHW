@@ -12,7 +12,7 @@ router.get('*'), (req, res) => {
   res.json(notes)
 }
 
-router.get('/notes'), (req, res) => {
+router.get('/notes', (req, res) => {
   
   let newNote =  req.body
   let newNoteId = note.length
