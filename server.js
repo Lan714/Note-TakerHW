@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
-app.get('/notes', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(join(__dirname, './public/index.html'))
 })
 
