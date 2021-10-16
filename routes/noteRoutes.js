@@ -8,14 +8,13 @@ router.get('/notes', (req, res) => {
   res.json(notes)
 })
 
-router.get('*'), (req, res) => {
-  res.json(notes)
-}
 
-router.get('/notes', (req, res) => {
-  
+router.post('/notes', (req, res) => {
+
   let newNote =  req.body
   let newNoteId = note.length
+
+  newNote.id = newNoteId
 
   notes.push(newNote)
   res.sendStatus(200)
