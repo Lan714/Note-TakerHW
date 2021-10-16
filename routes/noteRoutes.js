@@ -1,6 +1,8 @@
 const router = require('express').Router()
-let { notes } = require('../db')
-let id = 0
+const { text } = require('body-parser')
+
+let notes  = require('../db/db.json')
+
 
 router.get('/notes', (req, res) => {
   res.json(notes)
@@ -11,20 +13,16 @@ router.get('*'), (req, res) => {
 }
 
 router.get('/notes'), (req, res) => {
-  let newNote = {
-    title: req.body.title,
-    text: req.body.text,
-    id: id++
-  }
+  
+  let newNote =  req.body
+  let newNoteId = note.length
+
   notes.push(newNote)
-  console.log(newNote)
   res.sendStatus(200)
 })
 
 router.delete('/notes/:id', (req, res) => {
-  const id = parseInt(req.params.id)
-  console.log(id)
-  console.log(notes[id])
+  let noteId = req.params.noteId
   notes = notes.filter(note => note.id !== id)
   res.sendStatus(200)
 })
